@@ -1,0 +1,45 @@
+package TestesClass;
+import java.util.Scanner;
+
+public class TestesClass3 {
+
+	public static void main (String[] args) {
+		Scanner scanner = new Scanner (System.in);
+		String opcao;
+		do {
+
+				
+		System.out.println("Que tal somarmos números? " + "\n" + "Digite o 1º número: ");
+		double x1= scanner.nextDouble();
+		
+		System.out.println("Escolha a operação: + , - , * , / , ^");
+		char op = scanner.next().charAt(0);
+		
+		System.out.println("Digite o 2º número: ");
+		double x2 = scanner.nextDouble();
+		
+		// ideal é o double, pois se por o "int" só vai entrar numeros inteiros.
+		
+		
+		double resultado = 0;
+		switch(op) {
+		
+		//witch ou switch-case: é uma estrutura de controle de fluxo que permite executar diferentes blocos
+		//de código com base no valor de uma expressão, substituindo múltiplos if-else if. que torna com mais caracteres. 
+		//break é usada para sair prematuramente de um loop (como for, while (loop), do-while) ou de uma instrução switch. // while é ums estr de reptiç
+		
+		case '+': resultado = x1 + x2; break;
+		case '-': resultado = x1 - x2; break;
+		case '*': resultado = x1 * x2; break;
+		case '/': resultado = (x2 != 0) ? x1 / x2 : 0; break;
+		case '^': resultado = Math.pow(x1, x2); break;                         // o Math.pow - calcularár os grandes numeros.
+		default: System.out.println("Operação inválida");
+		}
+		System.out.println("O valor é: " + resultado + "\n");
+		System.out.println("Deseja fazer outra operação: (SIM OU NÃO)?");
+		opcao = scanner.next(); 
+		} while(!opcao.equalsIgnoreCase("NÃO"));
+		
+		scanner.close();
+		}
+}
