@@ -1,0 +1,17 @@
+package TestesClass;
+import java.util.Scanner;
+
+public class TestesClass2 {
+	public static void main (String[] args) {
+		@SuppressWarnings("resource")
+		Scanner numero = new Scanner(System.in);
+		
+		System.out.println("Vamos descobrir se o numero é par ou impar?");
+		System.out.println("Digite um numero de 0 à 100");
+		int number = numero.nextInt();
+		if (number % 2 ==0) System.out.println ("Este número é par");
+		else System.out.println("Este número é impar");
+	
+	}
+
+}
