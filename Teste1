@@ -1,0 +1,16 @@
+package TestesClass;
+//Saudação ao nome digitado
+import java.util.Scanner; 
+
+public class TestesClass {
+		public static void main (String[] args) {
+			Scanner scanner = new Scanner(System.in);	//Scanner é uma classe de pacotes utilizada para ler e analisar dados de diversas fontes,
+														// ( int, double e string), sendo a mais comum a entrada do utilizador através do teclado.
+		System.out.println("Olá, digite seu nome: ");	//Usar metodos como nextLine() - p/ linhas e nextInt() p/ numb inteiros.
+		String nome = scanner.nextLine();
+		
+		System.out.println("Olá, " + nome + "! Seja bem vindo a Workspace com a linguagem em programação JAVA.");
+		
+		scanner.close();
+}
+}
