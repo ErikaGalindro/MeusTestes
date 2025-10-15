@@ -1,5 +1,4 @@
 package TestesClass;
-//Saudação ao nome digitado
 import java.util.Scanner; 
 
 public class TestesClass {
