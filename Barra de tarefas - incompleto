@@ -1,0 +1,19 @@
+package TestesClass;
+
+public class TestesClass5 {
+	String descricao;
+	boolean status;
+	
+	void Tarefa(String descricao, boolean status) {
+		this.descricao = descricao;
+		this.status = false; }
+	
+	public String getDescrição() {
+		return descricao; }
+	public void setDescrição(String descricao) {
+		this.descricao = descricao;}
+	public boolean getStatus() {
+		return status ; }
+	public void setStatus(boolean status) {
+		this.status = status;}
+	
