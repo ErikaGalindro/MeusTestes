@@ -1,19 +1,81 @@
 package TestesClass;
 
-public class TestesClass5 {
-	String descricao;
-	boolean status;
-	
-	void Tarefa(String descricao, boolean status) {
+import java.util.ArrayList;
+import java.util.Scanner;
+
+//classe tarefa
+
+class Tarefa {
+	private String descricao;
+	private boolean concluida;
+
+	public Tarefa(String descricao) {
 		this.descricao = descricao;
-		this.status = false; }
-	
+		this.concluida = false;
+	}
+
+	public void concluir() {
+		this.concluida = true;
+	}
+
+	public boolean isConcluida() {
+		return concluida;
+	}
+
 	public String getDescrição() {
-		return descricao; }
+		return descricao;
+	}
+
 	public void setDescrição(String descricao) {
-		this.descricao = descricao;}
+		this.descricao = descricao;
+	}
+
 	public boolean getStatus() {
-		return status ; }
+		return concluida;
+	}
+
 	public void setStatus(boolean status) {
-		this.status = status;}
-	
+		this.concluida = status;
+	}
+
+	public String toString() {
+		return descricao + (concluida ? "(Concluída)" : " (Pendente)");
+
+	}
+}
+
+public class TestesClass5 {
+	public static void main(String[] args) {
+		Scanner dados = new Scanner(System.in);
+		ArrayList<Tarefa> tarefas = new ArrayList<>();
+		int opcao;
+
+		do {
+			System.out.println("\n 1.Adiciona \n 2.Listar \n 3.Concluir \n 4.Sair");
+			opcao = dados.nextInt();
+			dados.nextLine(); // reset butter
+
+			if (opcao == 1) {
+				System.out.print("Descreva a tarefa:");
+				tarefas.add(new Tarefa(dados.nextLine()));
+
+			} else if (opcao == 2) {
+				System.out.println("Tarefas");
+				for (int i = 0; i < tarefas.size(); i++) {
+					System.out.println(i + "-" + tarefas.get(i));
+				}
+
+			} else if (opcao == 3) {
+				System.out.println("Digite o número da tarefa para concluir:");
+				int index = dados.nextInt();
+				if (index >= 0 && index < tarefas.size()) {
+					tarefas.get(index).setStatus(true);
+				}
+			}
+
+		} while (opcao != 4);
+
+		System.out.println("FIM!");
+		dados.close();
+	}
+}
